@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- 同创云总工程空间包 -->
+    <parent>
+        <artifactId>cloud</artifactId>
+        <groupId>cn.com.cloud</groupId>
+        <version>1.0.0</version>
+    </parent>
+
+    <!-- 同创云工具命名空间包 -->
+    <groupId>cn.com.cloud.common</groupId>
+    <artifactId>cloud-common</artifactId>
+    <name>cloud-common</name>
+    <packaging>pom</packaging>
+    <version>1.0.0</version>
+    <description>cloud-common 同创云工具命名空间包</description>
+
+    <modules>
+        <!-- 同创云公共常用工具包 -->
+        <module>cloud-common-util</module>
+
+        <!-- 同创云公共常用数据处理包 -->
+        <module>cloud-common-data</module>
+    </modules>
+
+    <dependencies>
+
+        <!-- lombok日志系统依赖 -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+
+        <!-- 阿里巴巴JSON插件依赖 -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+        </dependency>
+
+    </dependencies>
+
+    <distributionManagement>
+        <repository>
+            <id>nexus-release</id>
+            <name>admin</name>
+            <url>http://localhost:8081/repository/nexus-releases/</url>
+            <!--<url>http://20t71z3582.iask.in:38459/repository/nexus-releases/</url>-->
+        </repository>
+        <snapshotRepository>
+            <id>nexus-snapshots</id>
+            <name>admin</name>
+            <url>http://localhost:8081/repository/nexus-snapshots/</url>
+            <!--<url>http://20t71z3582.iask.in:38459/repository/nexus-snapshots/</url>-->
+        </snapshotRepository>
+    </distributionManagement>
+
+</project>

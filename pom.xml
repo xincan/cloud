@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<!-- 同创云总工程空间包 -->
+	<groupId>cn.com.cloud</groupId>
+	<artifactId>cloud</artifactId>
+	<packaging>pom</packaging>
+	<version>1.0.0</version>
+
+	<modules>
+
+		<!-- 同创云工具包 -->
+		<module>cloud-common</module>
+
+		<!-- 同创云应用网关、注册中心微服务集群 -->
+		<module>cloud-center</module>
+
+		<!-- 同创云应用资源池微服务集群 -->
+		<module>cloud-app</module>
+
+	</modules>
+
+	<!-- 公共版本号统一存放处，便于以后修改，全局替换版本号 -->
+	<properties>
+
+		<!-- 构建项目编码格式配置 -->
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+		<!-- java JDK版本配置 -->
+		<java.version>1.8</java.version>
+
+		<!-- 云原声jar依赖优化版本配置-->
+		<platform-bom.version>Cairo-SR7</platform-bom.version>
+
+		<!-- spring-cloud版本配置 -->
+		<spring-boot.version>2.1.4.RELEASE</spring-boot.version>
+
+		<!-- spring-cloud版本配置 -->
+		<spring-cloud.version>Finchley.RELEASE</spring-cloud.version>
+
+
+		<!-- myBatis版本配置 -->
+		<spring-boot-mybatis.starter.version>1.3.2</spring-boot-mybatis.starter.version>
+
+		<!-- 阿里巴巴JSON数据处理版本配置 -->
+		<alibaba.fastjson.version>1.2.44</alibaba.fastjson.version>
+
+		<!-- 阿里巴巴监听版本配置 -->
+		<alibaba.spring.boot.druid.version>1.1.9</alibaba.spring.boot.druid.version>
+
+		<!-- 斯瓦格api版本配置 -->
+		<swagger2.version>2.8.0</swagger2.version>
+
+		<!-- 日志系统版本配置 -->
+		<lombok.version>1.18.4</lombok.version>
+
+		<!-- myBatis 封装版本配置 -->
+		<tk.mybatis.version>2.0.1</tk.mybatis.version>
+
+		<!-- myBatis分页版本配置 -->
+		<com.github.pagehelper.version>1.2.5</com.github.pagehelper.version>
+
+		<!-- 自定义插件版本配置 -->
+		<xincan.swagger.version>1.0.0</xincan.swagger.version>
+
+		<!-- 同创公司自定义工具类：数据处理工具包 -->
+		<cloud.common.data.version>1.0.0</cloud.common.data.version>
+
+		<!-- 同创公司自定义工具类：常用工具包 -->
+		<cloud.common.util.version>1.0.0</cloud.common.util.version>
+
+		<!-- commons系列版本配置 -->
+		<commons-net.version>3.6</commons-net.version>
+		<commons-pool2.version>2.4.2</commons-pool2.version>
+		<commons-lang3.version>3.7</commons-lang3.version>
+		<commons-io.version>2.6</commons-io.version>
+
+		<!-- dom4j版本配置 -->
+		<org.dom4j.version>2.1.1</org.dom4j.version>
+
+		<!-- poi版本控制 -->
+		<poi.version>4.0.1</poi.version>
+
+	</properties>
+
+
+	<!-- 定义依赖 -->
+	<dependencyManagement>
+
+		<dependencies>
+
+			<!-- 集成优化jar依赖 -->
+			<dependency>
+				<groupId>io.spring.platform</groupId>
+				<artifactId>platform-bom</artifactId>
+				<version>${platform-bom.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+
+			<!-- 集成spring-boot版本依赖 -->
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-parent</artifactId>
+				<version>${spring-boot.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+
+			<!-- 集成spring-cloud版本依赖 -->
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>${spring-cloud.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+
+			<!-- 集成同创公司封装的数据处理依赖 -->
+			<dependency>
+				<groupId>cn.com.cloud.common.data</groupId>
+				<artifactId>cloud-common-data</artifactId>
+				<version>${cloud.common.data.version}</version>
+			</dependency>
+
+			<!-- 集成同创公司封装公共处理类 -->
+			<dependency>
+				<groupId>cn.com.cloud.common.util</groupId>
+				<artifactId>cloud-common-util</artifactId>
+				<version>${cloud.common.util.version}</version>
+			</dependency>
+
+			<!-- 集成分页插件 -->
+			<dependency>
+				<groupId>com.github.pagehelper</groupId>
+				<artifactId>pagehelper-spring-boot-starter</artifactId>
+				<version>${com.github.pagehelper.version}</version>
+			</dependency>
+
+			<!-- 集成mybatis依赖 -->
+			<dependency>
+				<groupId>tk.mybatis</groupId>
+				<artifactId>mapper-spring-boot-starter</artifactId>
+				<version>${tk.mybatis.version}</version>
+			</dependency>
+
+			<!-- 集成阿里巴巴监听依赖 -->
+			<dependency>
+				<groupId>com.alibaba</groupId>
+				<artifactId>druid</artifactId>
+				<version>${alibaba.spring.boot.druid.version}</version>
+			</dependency>
+
+			<!-- 集成阿里巴巴JSON依赖 -->
+			<dependency>
+				<groupId>com.alibaba</groupId>
+				<artifactId>fastjson</artifactId>
+				<version>${alibaba.fastjson.version}</version>
+			</dependency>
+
+			<!-- 集成lombok日志依赖 -->
+			<dependency>
+				<groupId>org.projectlombok</groupId>
+				<artifactId>lombok</artifactId>
+				<version>${lombok.version}</version>
+			</dependency>
+
+			<!-- 集成RESTFUL API文档插件依赖 -->
+			<dependency>
+				<groupId>io.springfox</groupId>
+				<artifactId>springfox-swagger2</artifactId>
+				<version>${swagger2.version}</version>
+			</dependency>
+
+			<!-- 集成RESTFUL API UI 自定义文档插件依赖 -->
+			<dependency>
+				<groupId>com.xincan</groupId>
+				<artifactId>xincan-api-ui-layer</artifactId>
+				<version>${xincan.swagger.version}</version>
+			</dependency>
+
+			<!-- 集成commons工具包依赖 -->
+			<dependency>
+				<groupId>commons-net</groupId>
+				<artifactId>commons-net</artifactId>
+				<version>${commons-net.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.commons</groupId>
+				<artifactId>commons-pool2</artifactId>
+				<version>${commons-pool2.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.commons</groupId>
+				<artifactId>commons-lang3</artifactId>
+				<version>${commons-lang3.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-io</groupId>
+				<artifactId>commons-io</artifactId>
+				<version>${commons-io.version}</version>
+			</dependency>
+
+			<!-- 集成dom4j文档系统依赖 -->
+			<dependency>
+				<groupId>org.dom4j</groupId>
+				<artifactId>dom4j</artifactId>
+				<version>${org.dom4j.version}</version>
+			</dependency>
+
+
+		</dependencies>
+
+	</dependencyManagement>
+
+</project>

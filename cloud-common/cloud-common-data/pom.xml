@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- 继承同创云工具命名空间包 -->
+    <parent>
+        <artifactId>cloud-common</artifactId>
+        <groupId>cn.com.cloud.common</groupId>
+        <version>1.0.0</version>
+    </parent>
+
+    <!-- 同创云公共常用数据处理包 -->
+    <groupId>cn.com.cloud.common.data</groupId>
+    <artifactId>cloud-common-data</artifactId>
+    <name>cloud-common-data</name>
+    <packaging>jar</packaging>
+    <version>1.0.0</version>
+    <description>cloud-common-data 数据处理工具类</description>
+
+    <dependencies>
+
+        <!-- 引用分页插件 -->
+        <dependency>
+            <groupId>com.github.pagehelper</groupId>
+            <artifactId>pagehelper-spring-boot-starter</artifactId>
+        </dependency>
+
+        <!-- 引用mybatis依赖 -->
+        <dependency>
+            <groupId>tk.mybatis</groupId>
+            <artifactId>mapper-spring-boot-starter</artifactId>
+        </dependency>
+
+        <!-- 引用swagger依赖 -->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+        </dependency>
+
+    </dependencies>
+
+    <distributionManagement>
+        <repository>
+            <id>nexus-release</id>
+            <name>admin</name>
+<!--            <url>http://localhost:8081/repository/nexus-releases/</url>-->
+            <url>http://20t71z3582.iask.in:38459/repository/nexus-releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>nexus-snapshots</id>
+            <name>admin</name>
+<!--            <url>http://localhost:8081/repository/nexus-snapshots/</url>-->
+            <url>http://20t71z3582.iask.in:38459/repository/nexus-snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+</project>
