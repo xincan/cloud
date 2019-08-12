@@ -14,10 +14,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @Version: 1.0
  */
 @SpringBootApplication
-public class HatechCenterGatewayApplication {
+public class CloudCenterGatewayApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(HatechCenterGatewayApplication.class, args);
+        SpringApplication.run(CloudCenterGatewayApplication.class, args);
     }
 
 }

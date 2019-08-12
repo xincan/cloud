@@ -43,7 +43,7 @@ management:
 # 服务名称配置(同时测名称也是注册到eureka中心的名称)
 spring:
   application:
-    name: hatech-app-demo
+    name: cloud-app-demo
 
   # 数据源配置
   datasource:

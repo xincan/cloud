@@ -9,15 +9,15 @@ import org.springframework.test.context.junit4.SpringRunner;
  * @Copyright (C), 2018,北京同创永益科技发展有限公司
  * @ProjectName: hatech
  * @Package: cn.com.hatech.center.gateway
- * @ClassName: HatechCenterGatewayApplicationTests
+ * @ClassName: CloudCenterGatewayApplicationTests
  * @Author: Xincan
  * @Description: 路由网关微服务测试类
  * @Date: 2018-12-31 14:54
  * @Version: 1.0
  */
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = HatechCenterGatewayApplicationTests.class)
-public class HatechCenterGatewayApplicationTests {
+@SpringBootTest(classes = CloudCenterGatewayApplicationTests.class)
+public class CloudCenterGatewayApplicationTests {
 
     @Test
     public void contextLoads() {

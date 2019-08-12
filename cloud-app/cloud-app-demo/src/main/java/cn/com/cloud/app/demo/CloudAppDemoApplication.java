@@ -1,22 +1,20 @@
-package cn.com.cloud.center.eureka;
+package cn.com.cloud.app.demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 
 /**
  * Copyright (C), 2018, 北京同创永益科技发展有限公司
- * FileName: MybatisPage
+ * FileName: EmployeeServiceImpl
  * Author:   JiangXincan
  * Date:     2018-12-19 15:47:00
- * Description: 同创云服务注册与发现中心
+ * Description: 灾备业务影响分析微服务入口
  */
 @SpringBootApplication
-@EnableEurekaServer
-public class HatechCenterEurekaApplication {
+public class CloudAppDemoApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(HatechCenterEurekaApplication.class, args);
+        SpringApplication.run(CloudAppDemoApplication.class, args);
     }
 
 }

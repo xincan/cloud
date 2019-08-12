@@ -14,6 +14,12 @@ server:
     # 是否分配的直接内存
     direct-buffers: true
 
+
+spring:
+  application:
+    name: cloud-center-eureka  # 同创云注册与发现中心微服务名称
+
+
 eureka:
   client:
     register-with-eureka: false # 表示：是否将自己注册到 同创云注册与发现中心
@@ -37,13 +43,6 @@ management:
     health:
 
       show-details: always
-
-
-spring:
-  application:
-    name: hatech-center-eureka  # 同创云注册与发现中心微服务名称
-
-
 
 logging:
   level:
