@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.com.cloud.app.demo.teacher.mapper.TeacherMapper">
+
+    <resultMap id="BaseResultMap" type="cn.com.cloud.app.demo.teacher.entity.Teacher">
+        <id column="id" jdbcType="VARCHAR" property="id"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+        <result column="age" jdbcType="VARCHAR" property="age"/>
+        <result column="sex" jdbcType="VARCHAR" property="sex"/>
+        <result column="tclass" jdbcType="VARCHAR" property="tclass" />
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+    </resultMap>
+
+
+    <!-- 查询所有用户信息 -->
+    <select id="findAll"  resultMap="BaseResultMap">
+        select
+        id,
+        name,
+        age,
+        sex,
+        tclass,
+        create_time
+        FROM teacher
+        where 1=1
+        <if test="id != null and id != ''">and id = #{id}</if>
+        <if test="name != null and name != ''">AND name like '${name}%'</if>
+        <if test="sex != null and sex != ''">and sex = #{sex}</if>
+        <if test="tclass !=null and tclass !=''">and tclass = #{tclass}</if>
+        <choose>
+            <when test="sortName !=null and sortName!='id'">
+                ORDER BY ${sortName} ${sortOrder}
+            </when >
+            <otherwise>
+                ORDER BY create_time DESC
+            </otherwise>
+        </choose>
+    </select>
+<!--
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap">
+		select * from teacher where id = #{id}
+	</select>
+-->
+    <!-- 添加用户
+    <insert id="insert" parameterType="BaseResultMap" >
+        insert into teacher
+        <trim prefix="(" suffix=")" suffixOverrides="," >
+            <if test="id !=null">id</if>
+            <if test="tname !=null">tname,</if>
+            <if test="tage !=null">tage,</if>
+            <if test="tsex !=null">sex,</if>
+            <if test="tclass !=null">tclass,</if>
+             create_time,
+        </trim>
+        values
+
+        <trim prefix="(" suffix=")" suffixOverrides="," >
+            <if test="id !=null">#{id}</if>
+            <if test="tname !=null">#{tname},</if>
+            <if test="tage !=null">#{tage},</if>
+            <if test="tsex !=null">#{tsex},</if>
+            <if test="tclass !=null">#{tclass},</if>
+            now(),
+        </trim>
+    </insert>
+-->
+    <!-- 修改老师信息
+    <update id="updateByPrimaryKey" parameterType="BaseResultMap">
+        update teacher set
+        <trim suffixOverrides="," >
+            <if test="tname !=null">tname =#{tname},</if>
+            <if test="tage !=null">tage=#{tage},</if>
+            <if test="tsex !=null">tsex=#{tsex},</if>
+            <if test="tclass !=null">tclass=#{tclass},</if>
+
+        </trim>
+        where id=#{id}
+    </update>
+
+
+    <delete id="deleteByIds">
+        delete from teacher where id in
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+ -->
+</mapper>
