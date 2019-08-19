@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.com.cloud.app.demo.classroom.mapper.ClassroomMapper">
+
+    <resultMap id="BaseResultMap" type="cn.com.cloud.app.demo.classroom.entity.Classroom">
+        <id column="id" jdbcType="VARCHAR" property="id"/>
+        <result column="classname" jdbcType="VARCHAR" property="classname"/>
+        <result column="grade" jdbcType="VARCHAR" property="grade"/>
+        <result column="population" jdbcType="VARCHAR" property="population"/>
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+    </resultMap>
+
+
+    <!-- 查询所有用户信息 -->
+    <select id="findAll"  resultMap="BaseResultMap">
+        select
+        id,
+        classname,
+        grade,
+        population,
+        create_time
+        FROM st_class
+        where 1=1
+        <if test="id != null and id != ''">and id = #{id}</if>
+        <if test="classname != null and classname != ''">AND classname like '${classname}%'</if>
+        <if test="grade != null and grade != ''">and grade = #{grade}</if>
+        <if test="population != null and population != ''">and population = #{population}</if>
+        <choose>
+            <when test="sortName !=null and sortName!='id'">
+                ORDER BY ${sortName} ${sortOrder}
+            </when >
+            <otherwise>
+                ORDER BY create_time DESC
+            </otherwise>
+        </choose>
+    </select>
+
+</mapper>

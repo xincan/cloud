@@ -8,6 +8,7 @@
         <result column="age" jdbcType="VARCHAR" property="age"/>
         <result column="sex" jdbcType="VARCHAR" property="sex"/>
         <result column="tclass" jdbcType="VARCHAR" property="tclass" />
+        <result column="grade" jdbcType="VARCHAR" property="grade" />
         <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
     </resultMap>
 
@@ -20,6 +21,7 @@
         age,
         sex,
         tclass,
+        grade,
         create_time
         FROM teacher
         where 1=1
@@ -27,6 +29,7 @@
         <if test="name != null and name != ''">AND name like '${name}%'</if>
         <if test="sex != null and sex != ''">and sex = #{sex}</if>
         <if test="tclass !=null and tclass !=''">and tclass = #{tclass}</if>
+        <if test="grade != null and grade != ''">AND grade = #{grade}</if>
         <choose>
             <when test="sortName !=null and sortName!='id'">
                 ORDER BY ${sortName} ${sortOrder}

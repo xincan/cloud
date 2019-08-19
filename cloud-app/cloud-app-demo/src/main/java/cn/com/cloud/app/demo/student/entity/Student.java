@@ -31,6 +31,8 @@ public class Student {
     private  Integer sex;
     @Column(name = "sclass",length = 100)
     private  String sclass;
+    @Column(name = "grade",length = 100)
+    private  String grade;
     @JSONField(format="yyyy-MM-dd HH:mm:ss")        // 利用阿里巴巴JSON对数据库时间类型字段进行转换
     @Column(name = "create_time")
     private Date createTime;

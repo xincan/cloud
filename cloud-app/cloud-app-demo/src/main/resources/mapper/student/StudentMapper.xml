@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="cn.com.cloud.app.demo.students.mapper.StudentMapper">
+<mapper namespace="cn.com.cloud.app.demo.student.mapper.StudentMapper">
 
-    <resultMap id="BaseResultMap" type="cn.com.cloud.app.demo.students.entity.Student">
+    <resultMap id="BaseResultMap" type="cn.com.cloud.app.demo.student.entity.Student">
         <id column="id" jdbcType="VARCHAR" property="id"/>
         <result column="name" jdbcType="VARCHAR" property="name"/>
         <result column="age" jdbcType="VARCHAR" property="age"/>
         <result column="sex" jdbcType="VARCHAR" property="sex"/>
         <result column="sclass" jdbcType="VARCHAR" property="sclass" />
+        <result column="grade" jdbcType="VARCHAR" property="grade" />
         <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
     </resultMap>
 
@@ -20,6 +21,7 @@
         age,
         sex,
         sclass,
+        grade,
         create_time
         FROM student
         where 1=1
@@ -27,6 +29,7 @@
         <if test="name != null and name != ''">AND name like '${name}%'</if>
         <if test="sex != null and sex != ''">and sex = #{sex}</if>
         <if test="sclass != null and sclass != ''">AND sclass = #{sclass}</if>
+        <if test="grade != null and grade != ''">AND grade = #{grade}</if>
         <choose>
             <when test="sortName !=null and sortName!='id'">
                 ORDER BY ${sortName} ${sortOrder}

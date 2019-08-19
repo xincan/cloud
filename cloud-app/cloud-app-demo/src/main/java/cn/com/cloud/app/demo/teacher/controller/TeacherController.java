@@ -42,7 +42,8 @@ public class TeacherController {
             @ApiImplicitParam(name="name",value="真实名称",dataType = "String",paramType = "query"),
             @ApiImplicitParam(name="sex",value="用户性别", dataType = "int",paramType = "query"),
             @ApiImplicitParam(name="age",value="用户年龄", dataType = "int",paramType = "query"),
-            @ApiImplicitParam(name="tclass",value="所带班级", dataType = "String",paramType = "query")
+            @ApiImplicitParam(name="tclass",value="所带班级", dataType = "String",paramType = "query"),
+            @ApiImplicitParam(name="grade",value="所在年级", dataType = "String",paramType = "query")
     })
     @PostMapping("/insert")
     public ResultObject<Object> insert(@ApiParam(hidden = true) @RequestParam Map<String,Object> map){
@@ -62,7 +63,8 @@ public class TeacherController {
             @ApiImplicitParam(name="name",value="真实名称", dataType = "String",paramType = "query"),
             @ApiImplicitParam(name="sex",value="用户性别", dataType = "int",paramType = "query"),
             @ApiImplicitParam(name="age",value="用户年龄", dataType = "int",paramType = "query"),
-            @ApiImplicitParam(name="tclass",value="所带班级", dataType = "String",paramType = "query")
+            @ApiImplicitParam(name="tclass",value="所带班级", dataType = "String",paramType = "query"),
+            @ApiImplicitParam(name="grade",value="所在年级", dataType = "String",paramType = "query")
     })
     @PostMapping({"/update"})
     public ResultObject<Object> update(@ApiParam(hidden = true) @RequestParam Map<String,Object> map){
@@ -104,7 +106,8 @@ public class TeacherController {
             @ApiImplicitParam(name="name",value="真实名称", dataType = "String",paramType = "query"),
             @ApiImplicitParam(name="sex",value="用户性别", dataType = "int",paramType = "query"),
             @ApiImplicitParam(name="age",value="用户年龄", dataType = "int",paramType = "query"),
-            @ApiImplicitParam(name="tclass",value="所带班级", dataType = "String",paramType = "query")
+            @ApiImplicitParam(name="tclass",value="所带班级", dataType = "String",paramType = "query"),
+            @ApiImplicitParam(name="grade",value="所在年级", dataType = "String",paramType = "query")
     })
     @GetMapping("/select")
     public ResultObject<Teacher> findAll(@ApiParam(hidden = true) @RequestParam Map<String,Object> map) {

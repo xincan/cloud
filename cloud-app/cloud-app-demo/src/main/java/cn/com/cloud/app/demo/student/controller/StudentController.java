@@ -1,8 +1,8 @@
 package cn.com.cloud.app.demo.student.controller;
 
 
-import cn.com.cloud.app.demo.students.entity.Student;
-import cn.com.cloud.app.demo.students.service.StudentService;
+import cn.com.cloud.app.demo.student.entity.Student;
+import cn.com.cloud.app.demo.student.service.StudentService;
 import cn.com.cloud.common.data.result.ResultObject;
 import cn.com.cloud.common.data.result.ResultResponse;
 import com.alibaba.fastjson.JSON;
@@ -30,7 +30,8 @@ public class StudentController {
             @ApiImplicitParam(name="name",value="真实名称",dataType = "String",paramType = "query"),
             @ApiImplicitParam(name="sex",value="学生性别", dataType = "int",paramType = "query"),
             @ApiImplicitParam(name="age",value="学生年龄", dataType = "int",paramType = "query"),
-            @ApiImplicitParam(name="sclass",value="所在班级", dataType = "String",paramType = "query")
+            @ApiImplicitParam(name="sclass",value="所在班级", dataType = "String",paramType = "query"),
+            @ApiImplicitParam(name="grade",value="所在年级", dataType = "String",paramType = "query")
 
     })
     @PostMapping("/insert")
@@ -51,7 +52,8 @@ public class StudentController {
             @ApiImplicitParam(name="name",value="真实名称", dataType = "String",paramType = "query"),
             @ApiImplicitParam(name="sex",value="学生性别", dataType = "int",paramType = "query"),
             @ApiImplicitParam(name="age",value="学生年龄", dataType = "int",paramType = "query"),
-            @ApiImplicitParam(name="sclass",value="所在班级", dataType = "String",paramType = "query")
+            @ApiImplicitParam(name="sclass",value="所在班级", dataType = "String",paramType = "query"),
+            @ApiImplicitParam(name="grade",value="所在年级", dataType = "String",paramType = "query")
     })
     @PostMapping({"/update"})
     public ResultObject<Object> update(@ApiParam(hidden = true) @RequestParam Map<String,Object> map){
@@ -93,7 +95,8 @@ public class StudentController {
             @ApiImplicitParam(name="name",value="真实名称", dataType = "String",paramType = "query"),
             @ApiImplicitParam(name="sex",value="学生性别", dataType = "int",paramType = "query"),
             @ApiImplicitParam(name="age",value="学生年龄", dataType = "int",paramType = "query"),
-            @ApiImplicitParam(name="sclass",value="所在班级", dataType = "String",paramType = "query")
+            @ApiImplicitParam(name="sclass",value="所在班级", dataType = "String",paramType = "query"),
+            @ApiImplicitParam(name="grade",value="所在年级", dataType = "String",paramType = "query")
     })
     @GetMapping("/select")
     public ResultObject<Student> findAll(@ApiParam(hidden = true) @RequestParam Map<String,Object> map) {
