@@ -73,7 +73,7 @@
 		<cloud.common.util.version>1.0.0</cloud.common.util.version>
 
 		<!-- commons系列版本配置 -->
-		<commons-net.version>3.6</commons-net.version>
+		<commons-net.version>3.9.0</commons-net.version>
 		<commons-pool2.version>2.4.2</commons-pool2.version>
 		<commons-lang3.version>3.7</commons-lang3.version>
 		<commons-io.version>2.6</commons-io.version>
